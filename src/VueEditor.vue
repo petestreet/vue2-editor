@@ -52,7 +52,8 @@ export default {
       default () {
         return false
       }
-    }
+    },
+    isDisabled: Boolean
   },
 
   data: function () {
@@ -76,6 +77,7 @@ export default {
 
     vm.editor = document.querySelector('.ql-editor')
 
+    vm.isDisabled ? vm.quill.disable() : vm.quill.enable();
 
     if ( vm.$refs.livePreview !== undefined || false ) {
 
